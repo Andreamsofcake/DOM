@@ -26,8 +26,10 @@ var arr = Array.prototype.slice.call(collectionOfH1s);
 arr.forEach(function(h1) {
   h1.addEventListener("click", function( event ) {
     // display the current click count inside the clicked div
-    var newClass = "special"
-    event.target.parentNode.setAttribute('class', newClass)
+    if (event.target.parentNode.getAttribute('class') === "special") {
+      event.target.parentNode.setAttribute('class', '');
+    }
+    else {event.target.parentNode.setAttribute('class', "special")}
   }, false); //if it is not false reset?
 });
 
