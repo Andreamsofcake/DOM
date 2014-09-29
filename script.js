@@ -22,7 +22,8 @@ currentArticle.insertBefore(currentArticleTitle, currentArticle.childNodes[0]);
 
 document.getElementById("test").addEventListener("click", function( event ) {
     // display the current click count inside the clicked div
-    event.target.innerHTML = "This is a blog post about really awesome stuff I've done in JavaScript.";
+    var newClass = "special"
+    event.target.parentNode.setAttribute('class', newClass)
   }, false
   //if it is not false reset?
   );
