@@ -33,3 +33,15 @@ arr.forEach(function(h1) {
   }, false); //if it is not false reset?
 });
 
+var collectionOfPs = document.getElementsByTagName("p");
+var paragraphs = Array.prototype.slice.call(collectionOfPs);
+paragraphs.forEach(function(p) {
+  p.addEventListener('click', function(event){
+    if (event.target.parentNode.getAttribute('class') === "highlight") {
+      event.target.parentNode.setAttribute('class', '');
+    }
+    else {event.target.parentNode.setAttribute('class', "highlight")}
+  }, false);
+});
+
+

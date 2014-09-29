@@ -1,3 +1,7 @@
 article.special p{
   display: none;
 }
+article.highlight p{
+    background-color: yellow;
+    color: black;
+}
