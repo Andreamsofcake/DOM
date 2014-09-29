@@ -20,10 +20,14 @@ var currentArticleTitle = document.createElement('h1');
 currentArticleTitle.appendChild(document.createTextNode('My First Blog Post'));
 currentArticle.insertBefore(currentArticleTitle, currentArticle.childNodes[0]);
 
-document.getElementById("test").addEventListener("click", function( event ) {
+
+var collectionOfH1s = document.getElementsByTagName("h1");
+var arr = Array.prototype.slice.call(collectionOfH1s);
+arr.forEach(function(h1) {
+  h1.addEventListener("click", function( event ) {
     // display the current click count inside the clicked div
     var newClass = "special"
     event.target.parentNode.setAttribute('class', newClass)
-  }, false
-  //if it is not false reset?
-  );
+  }, false); //if it is not false reset?
+});
+
